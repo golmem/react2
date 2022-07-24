@@ -8,20 +8,11 @@ function App() {
 		{ id: 2, name: "Banane" },
 		{ id: 3, name: "Cerise" },
 	]);
+
 	//comportements
 	const handleClickSupp = (id) => {
-		console.log(id);
-		//1.Copier le state
-		//const fruitsCopy = fruits.slice;
-		const fruitsCopy = [...fruits]; //utilisation du spread operator
-
-		//2.Manipuler la copie du state
-		//on stocke dans fruitsCopyUpdated les données filtrer de fruitsCopy
-		//et fruitsCopy est filtrer en fonction de l'id cliqué
-		//on affiche les id qui sont different de l'id selectionné
+		const fruitsCopy = [...fruits];
 		const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
-
-		//3.Modifier le state avec le setter
 		setFruits(fruitsCopyUpdated);
 	};
 
@@ -35,11 +26,6 @@ function App() {
 						<div>
 							<li key={fruit.id}>
 								{fruit.name}
-								{/*
-								 *ici pour obtenir l'id on passe par une fonction fléchée
-								 *qui appel notre fonction pour la suppression et on passe en parametre fruit.id
-								 *cela nous permet de recuperer l'id
-								 */}
 								<button onClick={() => handleClickSupp(fruit.id)}>X</button>
 							</li>
 						</div>
