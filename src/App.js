@@ -7,7 +7,8 @@ function App() {
 
 	//comportements
 	const handleClick = () => {
-		alert("connecté");
+		//modifcation de la valeur de compteur
+		setCompteur(compteur + 1);
 	};
 	//render (boite3)
 	return (
