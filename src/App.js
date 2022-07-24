@@ -9,8 +9,8 @@ function App() {
 		{ id: 3, name: "Cerise" },
 	]);
 	//comportements
-	const handleClickSupp = () => {
-		console.log("connecté");
+	const handleClickSupp = (id) => {
+		console.log(id);
 	};
 
 	//render (boite3)
@@ -23,7 +23,12 @@ function App() {
 						<div>
 							<li key={fruit.id}>
 								{fruit.name}
-								<button onClick={handleClickSupp}>X</button>
+								{/*
+								 *ici pour obtenir l'id on passe par une fonction fléchée
+								 *qui appel notre fonction pour la suppression et on passe en parametre fruit.id
+								 *cela nous permet de recuperer l'id
+								 */}
+								<button onClick={() => handleClickSupp(fruit.id)}>X</button>
 							</li>
 						</div>
 					);
