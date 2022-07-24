@@ -1,0 +1,15 @@
+projet react vide
+
+commande pour créer un nouveau projet react
+npx create-react-app my-app
+
+pour lancer notre app on tape:
+npm start
+ou
+yarn start
+
+se placer dans le dossier de notre application
+cd my-app
+
+pour passer l'application en production à la toute fin on tape
+npm run build
