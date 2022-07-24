@@ -7,13 +7,14 @@ function App() {
 		//on crée notre const tableau qui recuperera la valeur du state defini
 		//on utilisera le destructuring pour affecter et modifier notre variable tableau
 		//on aura donc un tableau avec 
-			-tableau pour le nom la variable 
-			-et setTableau comme setter ou mutateur de notre tableau
+			-compteur pour le nom la variable 
+			-et setCompteur comme setter ou mutateur de notre compteur
 			c'est avec le setter que la modification des données de notre variable aura lieu
 	*/
-	const [tableau, setTableau] = useState(1);
+	const [compteur, setCompteur] = useState(1);
 
 	//render (boite3)
-	return <h1>1</h1>;
+	//utilisation de l'interpolation JSX pour afficher du javascript
+	return <h1>{compteur}</h1>;
 }
 export default App;
