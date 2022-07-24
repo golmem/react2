@@ -11,6 +11,13 @@ function App() {
 	//comportements
 	const handleClickSupp = (id) => {
 		console.log(id);
+		//1.Copier le state
+		//const fruitsCopy = fruits.slice;
+		const fruitsCopy = [...fruits]; //utilisation du spread operator
+
+		//2.Manipuler la copie du state
+
+		//3.Modifier le state avec le setter
 	};
 
 	//render (boite3)
