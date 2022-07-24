@@ -9,6 +9,9 @@ function App() {
 		{ id: 3, name: "Cerise" },
 	]);
 	//comportements
+	const handleClickSupp = () => {
+		console.log("connecté");
+	};
 
 	//render (boite3)
 	return (
@@ -20,7 +23,7 @@ function App() {
 						<div>
 							<li key={fruit.id}>
 								{fruit.name}
-								<button>X</button>
+								<button onClick={handleClickSupp}>X</button>
 							</li>
 						</div>
 					);
