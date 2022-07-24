@@ -7,6 +7,15 @@ function App() {
 	//comportements
 
 	//render (boite3)
-	return <div></div>;
+	return (
+		<div>
+			<h1>Liste de fruitd</h1>
+			<ul>
+				<li>Abricot</li>
+				<li>Banane</li>
+				<li>Cerise</li>
+			</ul>
+		</div>
+	);
 }
 export default App;
