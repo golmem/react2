@@ -16,8 +16,13 @@ function App() {
 		const fruitsCopy = [...fruits]; //utilisation du spread operator
 
 		//2.Manipuler la copie du state
+		//on stocke dans fruitCopyUpdated les données filtrer de fruitsCopy
+		//et fruitsCopy est filtrer en fonction de l'id cliqué
+		//on affiche les id qui sont different de l'id selectionné
+		const fruitCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
 
 		//3.Modifier le state avec le setter
+		setFruits(fruitsCopyUpdated);
 	};
 
 	//render (boite3)
