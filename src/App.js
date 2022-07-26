@@ -15,6 +15,12 @@ function App() {
 		const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
 		setFruits(fruitsCopyUpdated);
 	};
+	//on defini la fonction qui permettra de traiter la soumission du formulaire
+	const handleSubmit = (event) => {
+		//empecher le rechargement de la page
+		event.preventDefault();
+		alert("handleSubmit");
+	};
 
 	//render (boite3)
 	return (
@@ -32,9 +38,10 @@ function App() {
 					);
 				})}
 			</ul>
-			{/* 1. CREATION DU FORMULAIRE */}
-			<form action="submit">
+			{/* 2. SOUMISSION DU FORMULAIRE */}
+			<form action="submit" onSubmit={handleSubmit}>
 				<input type="text" placeholder="ajouter un fruit" />
+				<button>Ajouter +</button>
 			</form>
 		</div>
 	);
