@@ -32,14 +32,11 @@ function App() {
 					);
 				})}
 			</ul>
+			{/* 1. CREATION DU FORMULAIRE */}
+			<form action="submit">
+				<input type="text" placeholder="ajouter un fruit" />
+			</form>
 		</div>
 	);
 }
 export default App;
-
-/************************************************************************************************
-//Il y'a trois (03) choses à prendre en compte avec les formulaires
-// 1. la creation du formulaire en lui même
-// 2. la soumission du formulaire
-// 3. la collecte des données du formulaire
-************************************************************************************************ */
