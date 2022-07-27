@@ -10,9 +10,7 @@ function App() {
 		{ id: 3, name: "Cerise" },
 	]);
 
-	//utilisation de notre second hook useRef
-	//le hook useRef ne permet pas le re-render ce qui fait qu'il est tres peu utilisé
-	const inputRef = useRef();
+	const [nouveauFruit, setNouveauFruit] = useState("");
 
 	//comportements
 	const handleClickSupp = (id) => {
@@ -20,11 +18,17 @@ function App() {
 		const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
 		setFruits(fruitsCopyUpdated);
 	};
+
 	//on defini la fonction qui permettra de traiter la soumission du formulaire
 	const handleSubmit = (event) => {
 		//empecher le rechargement de la page
 		event.preventDefault();
-		console.log(inputRef.current.value);
+	};
+
+	//on defini notre fonction fléchée handleChange qui sera appelé lors du changement
+	//du champ input de type texte
+	const handleChange = (event) => {
+		setNouveauFruit(event.target.value);
 	};
 
 	//render (boite3)
@@ -43,10 +47,20 @@ function App() {
 					);
 				})}
 			</ul>
-			{/* 3. TRAITEMENT DES DONNÉES DU FORMULAIRE METHODE 1 */}
+			{/* 3. TRAITEMENT DES DONNÉES DU FORMULAIRE METHODE 2 */}
+			{/* synchronisation ascendante / descendente */}
 			<form action="submit" onSubmit={handleSubmit}>
-				{/**on utilise le mot clé ref pour lier notre const inputRef a notre input */}
-				<input ref={inputRef} type="text" placeholder="ajouter un fruit" />
+				{/*
+				 *on affecte a notre input la valeur de notre state nouveauFruit
+				 *on fait appel ensuite à l'evenment onChange qui sera activé quand on manipulera notre champ input
+				 *on y appelera la fonction handleChange
+				 */}
+				<input
+					type="text"
+					value={nouveauFruit}
+					onChange={handleChange}
+					placeholder="ajouter un fruit"
+				/>
 				<button>Ajouter +</button>
 			</form>
 		</div>
