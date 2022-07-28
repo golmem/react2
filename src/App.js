@@ -46,12 +46,14 @@ function App() {
 				{fruits.map((fruit) => {
 					return (
 						<div>
-							<li key={fruit.id}>
-								{fruit.name}
-								<button onClick={() => handleClickSupp(fruit.id)}>X</button>
-							</li>
 							{/**appel de notre composant enfant Fruit*/}
-							<Fruit />
+							{/*notre composant fruit a besoin des 
+							   données du composant parent pour fonctionner sans problème 
+							   nous abordons donc la notion de props des composants
+							   ce sont des attributs definis pour passer des données
+							   du parent à l'enfant
+							*/}
+							<Fruit fruitInfo={fruit} onFruitDelete={handleClickSupp} />
 						</div>
 					);
 				})}
