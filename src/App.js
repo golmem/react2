@@ -50,6 +50,8 @@ function App() {
 								{fruit.name}
 								<button onClick={() => handleClickSupp(fruit.id)}>X</button>
 							</li>
+							{/**appel de notre composant enfant Fruit*/}
+							<Fruit />
 						</div>
 					);
 				})}
