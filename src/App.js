@@ -1,6 +1,7 @@
 //importation de notre premier Hook useState
-//importation de notre second Hook useRef
-import { useState, useRef } from "react";
+import { useState } from "react";
+//importation de notre composant enfant Fruit
+import Fruit from "./components/Fruit";
 
 function App() {
 	//state(boite1)
