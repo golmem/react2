@@ -23,6 +23,23 @@ function App() {
 	const handleSubmit = (event) => {
 		//empecher le rechargement de la page
 		event.preventDefault();
+
+		// 1. Copy du state
+		const fruitsCopy = [...fruits];
+
+		// 2. Manipulation de la copy du state
+		//recupération d'un id unique
+		const id = new Date().getTime();
+		//recuperation de notre nouveau fruit
+		const name = nouveauFruit;
+		//ajout de l'id et du nom dans le tableau fruitsCopy
+		//fruitsCopy.push({id:id, name:name}); VERSION 1 NON REFACTORÉ
+		fruitsCopy.push({ id, name }); //VERSION 2 REFACTORÉ
+
+		// 3. modifier le state avec le setter
+		setFruits(fruitsCopy);
+		//liberer le champ input
+		setNouveauFruit("");
 	};
 
 	//on defini notre fonction fléchée handleChange qui sera appelé lors du changement
@@ -48,13 +65,7 @@ function App() {
 				})}
 			</ul>
 			{/* 3. TRAITEMENT DES DONNÉES DU FORMULAIRE METHODE 2 */}
-			{/* synchronisation ascendante / descendente */}
 			<form action="submit" onSubmit={handleSubmit}>
-				{/*
-				 *on affecte a notre input la valeur de notre state nouveauFruit
-				 *on fait appel ensuite à l'evenment onChange qui sera activé quand on manipulera notre champ input
-				 *on y appelera la fonction handleChange
-				 */}
 				<input
 					type="text"
 					value={nouveauFruit}
