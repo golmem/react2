@@ -28,13 +28,10 @@ function App() {
 		const fruitsCopy = [...fruits];
 
 		// 2. Manipulation de la copy du state
-		//recupération d'un id unique
 		const id = new Date().getTime();
-		//recuperation de notre nouveau fruit
 		const name = nouveauFruit;
-		//ajout de l'id et du nom dans le tableau fruitsCopy
-		//fruitsCopy.push({id:id, name:name}); VERSION 1 NON REFACTORÉ
-		fruitsCopy.push({ id, name }); //VERSION 2 REFACTORÉ
+		const fruitToAdd = { id, name };
+		fruitsCopy.push(fruitToAdd); //VERSION 2 REFACTORÉ
 
 		// 3. modifier le state avec le setter
 		setFruits(fruitsCopy);
