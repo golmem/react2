@@ -12,35 +12,27 @@ function App() {
 
 	const [nouveauFruit, setNouveauFruit] = useState("");
 
-	//comportements
+	//comportements (BOITE 2)
 	const handleClickSupp = (id) => {
 		const fruitsCopy = [...fruits];
 		const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
 		setFruits(fruitsCopyUpdated);
 	};
 
-	//on defini la fonction qui permettra de traiter la soumission du formulaire
 	const handleSubmit = (event) => {
-		//empecher le rechargement de la page
 		event.preventDefault();
 
-		// 1. Copy du state
 		const fruitsCopy = [...fruits];
 
-		// 2. Manipulation de la copy du state
 		const id = new Date().getTime();
 		const name = nouveauFruit;
 		const fruitToAdd = { id, name };
-		fruitsCopy.push(fruitToAdd); //VERSION 2 REFACTORÉ
+		fruitsCopy.push(fruitToAdd);
 
-		// 3. modifier le state avec le setter
 		setFruits(fruitsCopy);
-		//liberer le champ input
 		setNouveauFruit("");
 	};
 
-	//on defini notre fonction fléchée handleChange qui sera appelé lors du changement
-	//du champ input de type texte
 	const handleChange = (event) => {
 		setNouveauFruit(event.target.value);
 	};
@@ -61,7 +53,6 @@ function App() {
 					);
 				})}
 			</ul>
-			{/* 3. TRAITEMENT DES DONNÉES DU FORMULAIRE METHODE 2 */}
 			<form action="submit" onSubmit={handleSubmit}>
 				<input
 					type="text"
