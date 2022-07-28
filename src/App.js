@@ -47,11 +47,10 @@ function App() {
 					return (
 						<div>
 							{/**appel de notre composant enfant Fruit*/}
-							{/*notre composant fruit a besoin des 
-							   données du composant parent pour fonctionner sans problème 
-							   nous abordons donc la notion de props des composants
-							   ce sont des attributs definis pour passer des données
-							   du parent à l'enfant
+							{/*l'utilisation des props se deroule en 3 etapes
+								// 1. Passage des données dans le composant enfant à partir du composant parent
+								// 2. Recupération des données dans le composant enfant en mettant props comme parametre
+								// 3. Consommation des données
 							*/}
 							<Fruit fruitInfo={fruit} onFruitDelete={handleClickSupp} />
 						</div>
