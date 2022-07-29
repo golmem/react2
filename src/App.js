@@ -20,6 +20,12 @@ function App() {
 		setFruits(fruitsCopyUpdated);
 	};
 
+	const handleAdd = (fruitToAdd) => {
+		const fruitsCopy = [...fruits];
+		fruitsCopy.push(fruitToAdd);
+		setFruits(fruitsCopy);
+	};
+
 	//render (boite3)
 	return (
 		<div>
@@ -28,14 +34,18 @@ function App() {
 				{fruits.map((fruit) => {
 					return (
 						<div>
-							<Fruit fruitInfo={fruit} onFruitDelete={handleClickSupp} />
+							<Fruit
+								fruitInfo={fruit}
+								onFruitDelete={handleClickSupp}
+								key={fruit.id}
+							/>
 						</div>
 					);
 				})}
 			</ul>
 
 			{/*le tableau fruits et son mutateur setFruits sont passés en tant que props recupérés par le formulaire */}
-			<Formulaire fruits={fruits} setFruits={setFruits} />
+			<Formulaire handleAdd={handleAdd} />
 		</div>
 	);
 }

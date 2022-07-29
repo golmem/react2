@@ -7,7 +7,7 @@ export default function Fruit ({fruitInfo,onFruitDelete}){
 
     //render(boite3)
     return (
-        <li key={fruitInfo.id}>
+        <li>
 			{fruitInfo.name}
 		    <button onClick={() => onFruitDelete(fruitInfo.id)}>X</button>
 		</li>
