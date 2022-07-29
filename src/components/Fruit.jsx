@@ -3,8 +3,8 @@
 export default function Fruit (props){
     //state (boite1)
     //les variables fruitInfo et onFruitDelete ont pour valeur props.fruitInfo et props.onFruitDelete
-    const fruitInfo = props.fruitInfo;
-    const onFruitDelete = props.onFruitDelete;
+    //utilisons le destructuring
+    const { fruitInfo, onFruitDelete } = props;
     //comportements (boite2)
 
     //render(boite3)
