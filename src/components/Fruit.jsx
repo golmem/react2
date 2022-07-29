@@ -1,10 +1,8 @@
 
-//recupération des données transmises
-export default function Fruit (props){
+//recupération des données (props) transmises en paramètre par destructuring
+export default function Fruit ({fruitInfo,onFruitDelete}){
     //state (boite1)
-    //les variables fruitInfo et onFruitDelete ont pour valeur props.fruitInfo et props.onFruitDelete
-    //utilisons le destructuring
-    const { fruitInfo, onFruitDelete } = props;
+
     //comportements (boite2)
 
     //render(boite3)
