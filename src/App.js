@@ -26,6 +26,11 @@ function App() {
 		setFruits(fruitsCopy);
 	};
 
+	const afficherFruitPrefere = (fruitNom) => {
+		//alert('mon fruit préféré: '+fruitNom)
+		alert(`j'adore ce fruit : ${fruitNom}`);
+	};
+
 	//render (boite3)
 	return (
 		<div>
@@ -36,7 +41,7 @@ function App() {
 						<div>
 							<Fruit
 								fruitInfo={fruit}
-								onFruitDelete={handleClickSupp}
+								actionClick={() => afficherFruitPrefere(fruit.name)}
 								key={fruit.id}
 							/>
 						</div>

@@ -1,6 +1,6 @@
 
 //recupération des données (props) transmises en paramètre par destructuring
-export default function Fruit ({fruitInfo,onFruitDelete}){
+export default function Fruit ({fruitInfo,actionClick}){
     //state (boite1)
 
     //comportements (boite2)
@@ -9,7 +9,7 @@ export default function Fruit ({fruitInfo,onFruitDelete}){
     return (
         <li>
 			{fruitInfo.name}
-		    <button onClick={() => onFruitDelete(fruitInfo.id)}>X</button>
+		    <button onClick={actionClick}>X</button>
 		</li>
     );
 };
