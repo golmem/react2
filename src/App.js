@@ -14,11 +14,11 @@ function App() {
 	]);
 
 	//comportements (BOITE 2)
-	const handleClickSupp = (id) => {
-		const fruitsCopy = [...fruits];
-		const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
-		setFruits(fruitsCopyUpdated);
-	};
+	//const handleClickSupp = (id) => {
+	//	const fruitsCopy = [...fruits];
+	//	const fruitsCopyUpdated = fruitsCopy.filter((fruit) => fruit.id !== id);
+	//	setFruits(fruitsCopyUpdated);
+	//};
 
 	const handleAdd = (fruitToAdd) => {
 		const fruitsCopy = [...fruits];
